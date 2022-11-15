@@ -15,11 +15,11 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-builders/custom-webpack:browser",
+          "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "outputPath": "dist/standalone",
             "index": "src/index.html",
-            "main": "src/main.single-spa.ts",
+            "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
@@ -30,13 +30,7 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": [],
-            "customWebpackConfig": {
-              "path": "extra-webpack.config.js",
-              "libraryName": "standalone",
-              "libraryTarget": "umd"
-            },
-            "deployUrl": "http://localhost:4200/"
+            "scripts": []
           },
           "configurations": {
             "production": {
@@ -58,7 +52,7 @@
                   "with": "src/environments/environment.prod.ts"
                 }
               ],
-              "outputHashing": "none"
+              "outputHashing": "all"
             },
             "development": {
               "buildOptimizer": false,
@@ -66,14 +60,13 @@
               "vendorChunk": true,
               "extractLicenses": false,
               "sourceMap": true,
-              "namedChunks": true,
-              "outputHashing": "none"
+              "namedChunks": true
             }
           },
           "defaultConfiguration": "production"
         },
         "serve": {
-          "builder": "@angular-builders/custom-webpack:dev-server",
+          "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
               "browserTarget": "standalone:build:production"
@@ -112,6 +105,6 @@
     }
   },
   "cli": {
-    "analytics": "e19fb8de-4b7e-449c-9a33-d4970a5985a1"
+    "analytics": "17aac722-568d-438d-b8c2-c999a8a9a020"
   }
 }
