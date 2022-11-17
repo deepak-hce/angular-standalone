@@ -1,7 +1,8 @@
+<h1>Some component</h1>
+<div class="home-container">
+  <ng-container *ngFor="let data of containerData">
+    <app-view-container [data]="data"></app-view-container>
+  </ng-container>
 
-<h1> Some component </h1>
-<div class="main-container">
-
-  <ng-template #componentOutlet></ng-template>
-
+  <!-- <ng-template #componentOutlet></ng-template> -->
 </div>

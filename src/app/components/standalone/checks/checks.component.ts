@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { TableGeneratorComponent } from '../../shared/table-generator/table-generator.component';
 
 @Component({
@@ -9,7 +9,10 @@ import { TableGeneratorComponent } from '../../shared/table-generator/table-gene
   standalone: true,
 })
 export class ChecksComponent implements OnInit {
+  @Input() data: any = null;
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    console.log(this.data);
+  }
 }
