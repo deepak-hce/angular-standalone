@@ -14,7 +14,7 @@ export class ComponentTypeMap {
           return ChecksComponent;
 
         case ComponentName.CHECKS_V2:
-          let { ChecksV2Component } = await import(
+          const { ChecksV2Component } = await import(
             '../components/standalone/checks-v2/checks-v2.component'
           );
           return ChecksV2Component;

@@ -1,12 +1,6 @@
 import { ComponentType } from './../../../classes/ComponentTypeMap';
 import { IViewContainerData } from './../../dummy/view-container/view-container.component';
-import {
-  AfterViewInit,
-  Component,
-  OnInit,
-  ViewChild,
-  ViewContainerRef,
-} from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { ComponentName } from 'src/app/classes/ComponentTypeMap';
 
 @Component({
@@ -15,9 +9,6 @@ import { ComponentName } from 'src/app/classes/ComponentTypeMap';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit, AfterViewInit {
-  @ViewChild('componentOutlet', { read: ViewContainerRef })
-  componentOutlet!: ViewContainerRef;
-  componentBoolean: number = 1;
   containerData: IViewContainerData[] = [
     {
       componentName: ComponentName.CHECKS,
@@ -34,9 +25,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   ];
   constructor() {}
 
-  ngOnInit(): void {
-    console.log('hello world');
-  }
+  ngOnInit(): void {}
 
   ngAfterViewInit(): void {}
 }
